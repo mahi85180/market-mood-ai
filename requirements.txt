@@ -7,5 +7,4 @@ beautifulsoup4
 lxml
 scipy
 scikit-learn
-tensorflow-cpu
 joblib
