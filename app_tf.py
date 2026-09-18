@@ -1,6 +1,7 @@
 # app.py — v4 with ML tab + manual results
 import streamlit as st
 import pandas as pd
+from streamlit_autorefresh import st_autorefresh
 import random
 import os
 from datetime import datetime
@@ -185,6 +186,10 @@ st.sidebar.caption("Statistical tool. Prediction guarantee nahi.")
 
 # ==================== TITLE ====================
 st.title("🧠 Market Mood AI")
+
+# ===== AUTO-SYNC (har 5 sec) =====
+_sync_count = st_autorefresh(interval=5000, key="autosync")
+# ===== /AUTO-SYNC =====
 
 # Random button
 if st.button("🎲 4 Random Numbers", use_container_width=True, type="primary"):
