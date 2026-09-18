@@ -6,8 +6,6 @@ __pycache__/
 models/*.pkl
 models/*.keras
 models/*.h5
-data/
-daily_predictions/*.csv
 daily_predictions/snapshots/*.json
 predictions/
 scripts/archive/
