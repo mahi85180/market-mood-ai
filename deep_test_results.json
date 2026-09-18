@@ -1,0 +1,1171 @@
+{
+  "generated_at": "2026-09-17T15:13:13.581409",
+  "per_site": [
+    {
+      "site": "Sridevi",
+      "total_predictions": 299,
+      "methods": {
+        "markov1": {
+          "top1": 32,
+          "top3": 93,
+          "top5": 172,
+          "total": 299
+        },
+        "markov2": {
+          "top1": 24,
+          "top3": 99,
+          "top5": 165,
+          "total": 299
+        },
+        "markov3": {
+          "top1": 24,
+          "top3": 63,
+          "top5": 76,
+          "total": 283
+        },
+        "freq30": {
+          "top1": 30,
+          "top3": 92,
+          "top5": 146,
+          "total": 299
+        },
+        "freq100": {
+          "top1": 31,
+          "top3": 95,
+          "top5": 156,
+          "total": 299
+        },
+        "recency": {
+          "top1": 34,
+          "top3": 88,
+          "top5": 152,
+          "total": 299
+        },
+        "gap": {
+          "top1": 21,
+          "top3": 70,
+          "top5": 130,
+          "total": 299
+        },
+        "weekday": {
+          "top1": 30,
+          "top3": 82,
+          "top5": 118,
+          "total": 299
+        },
+        "shift": {
+          "top1": 28,
+          "top3": 85,
+          "top5": 148,
+          "total": 299
+        }
+      },
+      "voting": {
+        "top1": 30,
+        "top3": 83,
+        "top5": 144,
+        "total": 299
+      },
+      "weighted": {
+        "top1": 26,
+        "top3": 88,
+        "top5": 151,
+        "total": 299
+      },
+      "random": {
+        "top1": 35,
+        "top3": 104,
+        "top5": 165,
+        "total": 299
+      }
+    },
+    {
+      "site": "Time Bazar",
+      "total_predictions": 299,
+      "methods": {
+        "markov1": {
+          "top1": 32,
+          "top3": 93,
+          "top5": 151,
+          "total": 299
+        },
+        "markov2": {
+          "top1": 34,
+          "top3": 93,
+          "top5": 157,
+          "total": 299
+        },
+        "markov3": {
+          "top1": 38,
+          "top3": 93,
+          "top5": 134,
+          "total": 298
+        },
+        "freq30": {
+          "top1": 24,
+          "top3": 78,
+          "top5": 137,
+          "total": 299
+        },
+        "freq100": {
+          "top1": 28,
+          "top3": 90,
+          "top5": 149,
+          "total": 299
+        },
+        "recency": {
+          "top1": 26,
+          "top3": 80,
+          "top5": 140,
+          "total": 299
+        },
+        "gap": {
+          "top1": 33,
+          "top3": 101,
+          "top5": 155,
+          "total": 299
+        },
+        "weekday": {
+          "top1": 33,
+          "top3": 105,
+          "top5": 136,
+          "total": 299
+        },
+        "shift": {
+          "top1": 31,
+          "top3": 86,
+          "top5": 153,
+          "total": 299
+        }
+      },
+      "voting": {
+        "top1": 26,
+        "top3": 86,
+        "top5": 148,
+        "total": 299
+      },
+      "weighted": {
+        "top1": 31,
+        "top3": 93,
+        "top5": 160,
+        "total": 299
+      },
+      "random": {
+        "top1": 26,
+        "top3": 88,
+        "top5": 149,
+        "total": 299
+      }
+    },
+    {
+      "site": "Madhur Day",
+      "total_predictions": 299,
+      "methods": {
+        "markov1": {
+          "top1": 28,
+          "top3": 92,
+          "top5": 145,
+          "total": 299
+        },
+        "markov2": {
+          "top1": 31,
+          "top3": 88,
+          "top5": 154,
+          "total": 299
+        },
+        "markov3": {
+          "top1": 34,
+          "top3": 89,
+          "top5": 109,
+          "total": 296
+        },
+        "freq30": {
+          "top1": 34,
+          "top3": 94,
+          "top5": 160,
+          "total": 299
+        },
+        "freq100": {
+          "top1": 27,
+          "top3": 97,
+          "top5": 136,
+          "total": 299
+        },
+        "recency": {
+          "top1": 32,
+          "top3": 94,
+          "top5": 158,
+          "total": 299
+        },
+        "gap": {
+          "top1": 24,
+          "top3": 85,
+          "top5": 156,
+          "total": 299
+        },
+        "weekday": {
+          "top1": 21,
+          "top3": 94,
+          "top5": 128,
+          "total": 299
+        },
+        "shift": {
+          "top1": 27,
+          "top3": 96,
+          "top5": 157,
+          "total": 299
+        }
+      },
+      "voting": {
+        "top1": 36,
+        "top3": 95,
+        "top5": 151,
+        "total": 299
+      },
+      "weighted": {
+        "top1": 31,
+        "top3": 102,
+        "top5": 165,
+        "total": 299
+      },
+      "random": {
+        "top1": 35,
+        "top3": 102,
+        "top5": 161,
+        "total": 299
+      }
+    },
+    {
+      "site": "Milan Day",
+      "total_predictions": 299,
+      "methods": {
+        "markov1": {
+          "top1": 33,
+          "top3": 115,
+          "top5": 162,
+          "total": 299
+        },
+        "markov2": {
+          "top1": 33,
+          "top3": 98,
+          "top5": 156,
+          "total": 299
+        },
+        "markov3": {
+          "top1": 32,
+          "top3": 89,
+          "top5": 113,
+          "total": 295
+        },
+        "freq30": {
+          "top1": 41,
+          "top3": 104,
+          "top5": 149,
+          "total": 299
+        },
+        "freq100": {
+          "top1": 29,
+          "top3": 95,
+          "top5": 155,
+          "total": 299
+        },
+        "recency": {
+          "top1": 37,
+          "top3": 99,
+          "top5": 157,
+          "total": 299
+        },
+        "gap": {
+          "top1": 31,
+          "top3": 78,
+          "top5": 138,
+          "total": 299
+        },
+        "weekday": {
+          "top1": 35,
+          "top3": 89,
+          "top5": 115,
+          "total": 299
+        },
+        "shift": {
+          "top1": 30,
+          "top3": 89,
+          "top5": 150,
+          "total": 299
+        }
+      },
+      "voting": {
+        "top1": 38,
+        "top3": 101,
+        "top5": 157,
+        "total": 299
+      },
+      "weighted": {
+        "top1": 36,
+        "top3": 95,
+        "top5": 148,
+        "total": 299
+      },
+      "random": {
+        "top1": 32,
+        "top3": 79,
+        "top5": 130,
+        "total": 299
+      }
+    },
+    {
+      "site": "Rajdhani Day",
+      "total_predictions": 299,
+      "methods": {
+        "markov1": {
+          "top1": 35,
+          "top3": 80,
+          "top5": 148,
+          "total": 299
+        },
+        "markov2": {
+          "top1": 30,
+          "top3": 85,
+          "top5": 144,
+          "total": 299
+        },
+        "markov3": {
+          "top1": 26,
+          "top3": 67,
+          "top5": 93,
+          "total": 292
+        },
+        "freq30": {
+          "top1": 35,
+          "top3": 102,
+          "top5": 166,
+          "total": 299
+        },
+        "freq100": {
+          "top1": 29,
+          "top3": 98,
+          "top5": 151,
+          "total": 299
+        },
+        "recency": {
+          "top1": 38,
+          "top3": 97,
+          "top5": 164,
+          "total": 299
+        },
+        "gap": {
+          "top1": 25,
+          "top3": 78,
+          "top5": 149,
+          "total": 299
+        },
+        "weekday": {
+          "top1": 40,
+          "top3": 97,
+          "top5": 131,
+          "total": 299
+        },
+        "shift": {
+          "top1": 24,
+          "top3": 92,
+          "top5": 157,
+          "total": 299
+        }
+      },
+      "voting": {
+        "top1": 35,
+        "top3": 97,
+        "top5": 150,
+        "total": 299
+      },
+      "weighted": {
+        "top1": 34,
+        "top3": 86,
+        "top5": 151,
+        "total": 299
+      },
+      "random": {
+        "top1": 31,
+        "top3": 90,
+        "top5": 147,
+        "total": 299
+      }
+    },
+    {
+      "site": "Supreme Day",
+      "total_predictions": 299,
+      "methods": {
+        "markov1": {
+          "top1": 26,
+          "top3": 96,
+          "top5": 168,
+          "total": 299
+        },
+        "markov2": {
+          "top1": 27,
+          "top3": 96,
+          "top5": 170,
+          "total": 299
+        },
+        "markov3": {
+          "top1": 23,
+          "top3": 56,
+          "top5": 58,
+          "total": 259
+        },
+        "freq30": {
+          "top1": 25,
+          "top3": 83,
+          "top5": 133,
+          "total": 299
+        },
+        "freq100": {
+          "top1": 30,
+          "top3": 84,
+          "top5": 143,
+          "total": 299
+        },
+        "recency": {
+          "top1": 19,
+          "top3": 77,
+          "top5": 130,
+          "total": 299
+        },
+        "gap": {
+          "top1": 33,
+          "top3": 98,
+          "top5": 179,
+          "total": 299
+        },
+        "weekday": {
+          "top1": 24,
+          "top3": 83,
+          "top5": 117,
+          "total": 299
+        },
+        "shift": {
+          "top1": 25,
+          "top3": 74,
+          "top5": 138,
+          "total": 299
+        }
+      },
+      "voting": {
+        "top1": 21,
+        "top3": 85,
+        "top5": 143,
+        "total": 299
+      },
+      "weighted": {
+        "top1": 32,
+        "top3": 92,
+        "top5": 156,
+        "total": 299
+      },
+      "random": {
+        "top1": 31,
+        "top3": 89,
+        "top5": 145,
+        "total": 299
+      }
+    },
+    {
+      "site": "Kalyan",
+      "total_predictions": 299,
+      "methods": {
+        "markov1": {
+          "top1": 33,
+          "top3": 84,
+          "top5": 138,
+          "total": 299
+        },
+        "markov2": {
+          "top1": 38,
+          "top3": 101,
+          "top5": 152,
+          "total": 299
+        },
+        "markov3": {
+          "top1": 26,
+          "top3": 83,
+          "top5": 100,
+          "total": 296
+        },
+        "freq30": {
+          "top1": 30,
+          "top3": 100,
+          "top5": 167,
+          "total": 299
+        },
+        "freq100": {
+          "top1": 32,
+          "top3": 91,
+          "top5": 164,
+          "total": 299
+        },
+        "recency": {
+          "top1": 29,
+          "top3": 95,
+          "top5": 169,
+          "total": 299
+        },
+        "gap": {
+          "top1": 21,
+          "top3": 77,
+          "top5": 142,
+          "total": 299
+        },
+        "weekday": {
+          "top1": 24,
+          "top3": 92,
+          "top5": 124,
+          "total": 299
+        },
+        "shift": {
+          "top1": 28,
+          "top3": 99,
+          "top5": 168,
+          "total": 299
+        }
+      },
+      "voting": {
+        "top1": 32,
+        "top3": 96,
+        "top5": 154,
+        "total": 299
+      },
+      "weighted": {
+        "top1": 32,
+        "top3": 88,
+        "top5": 160,
+        "total": 299
+      },
+      "random": {
+        "top1": 30,
+        "top3": 86,
+        "top5": 150,
+        "total": 299
+      }
+    },
+    {
+      "site": "Sridevi Night",
+      "total_predictions": 299,
+      "methods": {
+        "markov1": {
+          "top1": 33,
+          "top3": 102,
+          "top5": 163,
+          "total": 299
+        },
+        "markov2": {
+          "top1": 32,
+          "top3": 85,
+          "top5": 156,
+          "total": 299
+        },
+        "markov3": {
+          "top1": 23,
+          "top3": 58,
+          "top5": 67,
+          "total": 278
+        },
+        "freq30": {
+          "top1": 21,
+          "top3": 89,
+          "top5": 148,
+          "total": 299
+        },
+        "freq100": {
+          "top1": 29,
+          "top3": 81,
+          "top5": 158,
+          "total": 299
+        },
+        "recency": {
+          "top1": 23,
+          "top3": 91,
+          "top5": 152,
+          "total": 299
+        },
+        "gap": {
+          "top1": 18,
+          "top3": 82,
+          "top5": 138,
+          "total": 299
+        },
+        "weekday": {
+          "top1": 24,
+          "top3": 90,
+          "top5": 118,
+          "total": 299
+        },
+        "shift": {
+          "top1": 32,
+          "top3": 102,
+          "top5": 164,
+          "total": 299
+        }
+      },
+      "voting": {
+        "top1": 26,
+        "top3": 80,
+        "top5": 150,
+        "total": 299
+      },
+      "weighted": {
+        "top1": 33,
+        "top3": 87,
+        "top5": 145,
+        "total": 299
+      },
+      "random": {
+        "top1": 22,
+        "top3": 84,
+        "top5": 144,
+        "total": 299
+      }
+    },
+    {
+      "site": "Madhur Night",
+      "total_predictions": 299,
+      "methods": {
+        "markov1": {
+          "top1": 26,
+          "top3": 92,
+          "top5": 138,
+          "total": 299
+        },
+        "markov2": {
+          "top1": 31,
+          "top3": 105,
+          "top5": 157,
+          "total": 299
+        },
+        "markov3": {
+          "top1": 23,
+          "top3": 79,
+          "top5": 100,
+          "total": 288
+        },
+        "freq30": {
+          "top1": 32,
+          "top3": 89,
+          "top5": 153,
+          "total": 299
+        },
+        "freq100": {
+          "top1": 23,
+          "top3": 76,
+          "top5": 146,
+          "total": 299
+        },
+        "recency": {
+          "top1": 19,
+          "top3": 79,
+          "top5": 140,
+          "total": 299
+        },
+        "gap": {
+          "top1": 24,
+          "top3": 88,
+          "top5": 153,
+          "total": 299
+        },
+        "weekday": {
+          "top1": 24,
+          "top3": 80,
+          "top5": 113,
+          "total": 299
+        },
+        "shift": {
+          "top1": 25,
+          "top3": 86,
+          "top5": 146,
+          "total": 299
+        }
+      },
+      "voting": {
+        "top1": 25,
+        "top3": 79,
+        "top5": 144,
+        "total": 299
+      },
+      "weighted": {
+        "top1": 23,
+        "top3": 86,
+        "top5": 158,
+        "total": 299
+      },
+      "random": {
+        "top1": 35,
+        "top3": 88,
+        "top5": 144,
+        "total": 299
+      }
+    },
+    {
+      "site": "Supreme Night",
+      "total_predictions": 299,
+      "methods": {
+        "markov1": {
+          "top1": 29,
+          "top3": 85,
+          "top5": 148,
+          "total": 299
+        },
+        "markov2": {
+          "top1": 27,
+          "top3": 86,
+          "top5": 163,
+          "total": 299
+        },
+        "freq30": {
+          "top1": 31,
+          "top3": 82,
+          "top5": 135,
+          "total": 299
+        },
+        "freq100": {
+          "top1": 29,
+          "top3": 86,
+          "top5": 142,
+          "total": 299
+        },
+        "recency": {
+          "top1": 28,
+          "top3": 88,
+          "top5": 137,
+          "total": 299
+        },
+        "gap": {
+          "top1": 43,
+          "top3": 86,
+          "top5": 167,
+          "total": 299
+        },
+        "weekday": {
+          "top1": 19,
+          "top3": 77,
+          "top5": 113,
+          "total": 299
+        },
+        "shift": {
+          "top1": 25,
+          "top3": 78,
+          "top5": 144,
+          "total": 299
+        },
+        "markov3": {
+          "top1": 21,
+          "top3": 58,
+          "top5": 59,
+          "total": 253
+        }
+      },
+      "voting": {
+        "top1": 27,
+        "top3": 77,
+        "top5": 132,
+        "total": 299
+      },
+      "weighted": {
+        "top1": 28,
+        "top3": 87,
+        "top5": 146,
+        "total": 299
+      },
+      "random": {
+        "top1": 21,
+        "top3": 78,
+        "top5": 149,
+        "total": 299
+      }
+    },
+    {
+      "site": "Milan Night",
+      "total_predictions": 299,
+      "methods": {
+        "markov1": {
+          "top1": 34,
+          "top3": 89,
+          "top5": 151,
+          "total": 299
+        },
+        "markov2": {
+          "top1": 27,
+          "top3": 89,
+          "top5": 143,
+          "total": 299
+        },
+        "markov3": {
+          "top1": 26,
+          "top3": 72,
+          "top5": 91,
+          "total": 296
+        },
+        "freq30": {
+          "top1": 31,
+          "top3": 78,
+          "top5": 153,
+          "total": 299
+        },
+        "freq100": {
+          "top1": 25,
+          "top3": 79,
+          "top5": 142,
+          "total": 299
+        },
+        "recency": {
+          "top1": 24,
+          "top3": 81,
+          "top5": 146,
+          "total": 299
+        },
+        "gap": {
+          "top1": 27,
+          "top3": 78,
+          "top5": 148,
+          "total": 299
+        },
+        "weekday": {
+          "top1": 17,
+          "top3": 78,
+          "top5": 117,
+          "total": 299
+        },
+        "shift": {
+          "top1": 29,
+          "top3": 88,
+          "top5": 156,
+          "total": 299
+        }
+      },
+      "voting": {
+        "top1": 21,
+        "top3": 70,
+        "top5": 145,
+        "total": 299
+      },
+      "weighted": {
+        "top1": 22,
+        "top3": 77,
+        "top5": 143,
+        "total": 299
+      },
+      "random": {
+        "top1": 36,
+        "top3": 96,
+        "top5": 151,
+        "total": 299
+      }
+    },
+    {
+      "site": "Kalyan Night",
+      "total_predictions": 299,
+      "methods": {
+        "markov1": {
+          "top1": 24,
+          "top3": 80,
+          "top5": 153,
+          "total": 299
+        },
+        "markov2": {
+          "top1": 38,
+          "top3": 90,
+          "top5": 157,
+          "total": 299
+        },
+        "markov3": {
+          "top1": 16,
+          "top3": 32,
+          "top5": 35,
+          "total": 246
+        },
+        "freq30": {
+          "top1": 32,
+          "top3": 85,
+          "top5": 145,
+          "total": 299
+        },
+        "freq100": {
+          "top1": 39,
+          "top3": 91,
+          "top5": 151,
+          "total": 299
+        },
+        "recency": {
+          "top1": 32,
+          "top3": 93,
+          "top5": 142,
+          "total": 299
+        },
+        "gap": {
+          "top1": 28,
+          "top3": 74,
+          "top5": 136,
+          "total": 299
+        },
+        "weekday": {
+          "top1": 23,
+          "top3": 71,
+          "top5": 120,
+          "total": 299
+        },
+        "shift": {
+          "top1": 44,
+          "top3": 86,
+          "top5": 146,
+          "total": 299
+        }
+      },
+      "voting": {
+        "top1": 31,
+        "top3": 86,
+        "top5": 146,
+        "total": 299
+      },
+      "weighted": {
+        "top1": 32,
+        "top3": 86,
+        "top5": 143,
+        "total": 299
+      },
+      "random": {
+        "top1": 48,
+        "top3": 110,
+        "top5": 156,
+        "total": 299
+      }
+    },
+    {
+      "site": "Rajdhani Night",
+      "total_predictions": 299,
+      "methods": {
+        "markov1": {
+          "top1": 31,
+          "top3": 91,
+          "top5": 154,
+          "total": 299
+        },
+        "markov2": {
+          "top1": 32,
+          "top3": 87,
+          "top5": 155,
+          "total": 299
+        },
+        "markov3": {
+          "top1": 31,
+          "top3": 64,
+          "top5": 83,
+          "total": 288
+        },
+        "freq30": {
+          "top1": 28,
+          "top3": 102,
+          "top5": 162,
+          "total": 299
+        },
+        "freq100": {
+          "top1": 25,
+          "top3": 85,
+          "top5": 161,
+          "total": 299
+        },
+        "recency": {
+          "top1": 30,
+          "top3": 99,
+          "top5": 153,
+          "total": 299
+        },
+        "gap": {
+          "top1": 25,
+          "top3": 69,
+          "top5": 129,
+          "total": 299
+        },
+        "weekday": {
+          "top1": 31,
+          "top3": 86,
+          "top5": 125,
+          "total": 299
+        },
+        "shift": {
+          "top1": 26,
+          "top3": 87,
+          "top5": 155,
+          "total": 299
+        }
+      },
+      "voting": {
+        "top1": 28,
+        "top3": 90,
+        "top5": 141,
+        "total": 299
+      },
+      "weighted": {
+        "top1": 30,
+        "top3": 94,
+        "top5": 153,
+        "total": 299
+      },
+      "random": {
+        "top1": 45,
+        "top3": 98,
+        "top5": 156,
+        "total": 299
+      }
+    },
+    {
+      "site": "Main Bazar",
+      "total_predictions": 299,
+      "methods": {
+        "markov1": {
+          "top1": 27,
+          "top3": 102,
+          "top5": 154,
+          "total": 299
+        },
+        "markov2": {
+          "top1": 29,
+          "top3": 84,
+          "top5": 142,
+          "total": 299
+        },
+        "markov3": {
+          "top1": 23,
+          "top3": 54,
+          "top5": 64,
+          "total": 269
+        },
+        "freq30": {
+          "top1": 32,
+          "top3": 90,
+          "top5": 161,
+          "total": 299
+        },
+        "freq100": {
+          "top1": 24,
+          "top3": 79,
+          "top5": 138,
+          "total": 299
+        },
+        "recency": {
+          "top1": 32,
+          "top3": 88,
+          "top5": 137,
+          "total": 299
+        },
+        "gap": {
+          "top1": 25,
+          "top3": 86,
+          "top5": 135,
+          "total": 299
+        },
+        "weekday": {
+          "top1": 25,
+          "top3": 87,
+          "top5": 119,
+          "total": 299
+        },
+        "shift": {
+          "top1": 27,
+          "top3": 83,
+          "top5": 132,
+          "total": 299
+        }
+      },
+      "voting": {
+        "top1": 35,
+        "top3": 84,
+        "top5": 158,
+        "total": 299
+      },
+      "weighted": {
+        "top1": 26,
+        "top3": 87,
+        "top5": 144,
+        "total": 299
+      },
+      "random": {
+        "top1": 26,
+        "top3": 89,
+        "top5": 141,
+        "total": 299
+      }
+    }
+  ],
+  "methods_agg": {
+    "markov1": {
+      "top1": 423,
+      "top3": 1294,
+      "top5": 2145,
+      "total": 4186
+    },
+    "markov2": {
+      "top1": 433,
+      "top3": 1286,
+      "top5": 2171,
+      "total": 4186
+    },
+    "markov3": {
+      "top1": 366,
+      "top3": 957,
+      "top5": 1182,
+      "total": 3937
+    },
+    "freq30": {
+      "top1": 426,
+      "top3": 1268,
+      "top5": 2115,
+      "total": 4186
+    },
+    "freq100": {
+      "top1": 400,
+      "top3": 1227,
+      "top5": 2092,
+      "total": 4186
+    },
+    "recency": {
+      "top1": 403,
+      "top3": 1249,
+      "top5": 2077,
+      "total": 4186
+    },
+    "gap": {
+      "top1": 378,
+      "top3": 1150,
+      "top5": 2055,
+      "total": 4186
+    },
+    "weekday": {
+      "top1": 370,
+      "top3": 1211,
+      "top5": 1694,
+      "total": 4186
+    },
+    "shift": {
+      "top1": 401,
+      "top3": 1231,
+      "top5": 2114,
+      "total": 4186
+    }
+  },
+  "voting_agg": {
+    "top1": 411,
+    "top3": 1209,
+    "top5": 2063,
+    "total": 4186
+  },
+  "weighted_agg": {
+    "top1": 416,
+    "top3": 1248,
+    "top5": 2123,
+    "total": 4186
+  },
+  "random_agg": {
+    "top1": 453,
+    "top3": 1281,
+    "top5": 2088,
+    "total": 4186
+  }
+}

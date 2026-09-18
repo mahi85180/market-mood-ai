@@ -1,0 +1,16 @@
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+*.log
+models/*.pkl
+models/*.keras
+models/*.h5
+data/
+daily_predictions/*.csv
+daily_predictions/snapshots/*.json
+predictions/
+scripts/archive/
+*.bak
+app_v2_backup.py
+app_old.py
