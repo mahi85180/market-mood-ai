@@ -10,7 +10,93 @@ from panna_predictor import predict_all_sites_full, load_snapshot
 from analyzer import MarketAnalyzer
 from ml_predictor import MLPredictor, TF_AVAILABLE
 
-st.set_page_config(page_title="Market Mood AI", page_icon="🧠", layout="wide")
+st.set_page_config(
+    page_title="Market Mood AI",
+    page_icon="🧠",
+    layout="wide",
+    initial_sidebar_state="collapsed",
+)
+
+# ==================== MOBILE-FRIENDLY CSS ====================
+st.markdown("""
+<style>
+/* Mobile-friendly adjustments */
+@media (max-width: 768px) {
+    .block-container {
+        padding-left: 0.8rem !important;
+        padding-right: 0.8rem !important;
+        padding-top: 0.5rem !important;
+    }
+    h1 { font-size: 1.5rem !important; }
+    h2 { font-size: 1.25rem !important; }
+    h3 { font-size: 1.1rem !important; }
+    h4 { font-size: 1rem !important; }
+    /* Bigger tap targets */
+    .stButton button {
+        min-height: 48px !important;
+        font-size: 16px !important;
+        font-weight: 600 !important;
+    }
+    /* Number inputs bigger */
+    .stNumberInput input, .stTextInput input {
+        font-size: 18px !important;
+        min-height: 44px !important;
+    }
+    /* Tabs bigger */
+    .stTabs [data-baseweb="tab"] {
+        padding: 10px 12px !important;
+        font-size: 14px !important;
+    }
+    /* Metric cards */
+    [data-testid="stMetricValue"] {
+        font-size: 1.4rem !important;
+    }
+    /* Expander header */
+    .streamlit-expanderHeader {
+        font-size: 15px !important;
+        padding: 12px !important;
+    }
+    /* Selectbox bigger */
+    .stSelectbox div[data-baseweb="select"] {
+        min-height: 44px !important;
+    }
+}
+
+/* Desktop tweaks */
+.stButton button {
+    border-radius: 8px;
+}
+
+/* Make prediction lists compact */
+.compact-list {
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+/* Tabs sticky on mobile */
+@media (max-width: 768px) {
+    .stTabs [data-baseweb="tab-list"] {
+        gap: 4px;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+}
+</style>
+""", unsafe_allow_html=True)
+
+
+def is_mobile():
+    """Detect mobile via user agent."""
+    try:
+        from streamlit.runtime.scriptrunner import get_script_run_ctx
+        from streamlit.web.server.websocket_headers import _get_websocket_headers
+        headers = _get_websocket_headers()
+        if headers:
+            ua = headers.get("User-Agent", "").lower()
+            return any(x in ua for x in ["mobile", "android", "iphone", "ipad"])
+    except Exception:
+        pass
+    return False
 
 MANUAL_RESULTS_FILE = "daily_predictions/manual_results.csv"
 
@@ -101,13 +187,10 @@ st.sidebar.caption("Statistical tool. Prediction guarantee nahi.")
 st.title("🧠 Market Mood AI")
 
 # Random button
-rc1, rc2 = st.columns([1, 4])
-with rc1:
-    if st.button("🎲 4 Random Numbers", use_container_width=True, type="primary"):
-        st.session_state["rand4"] = sorted(random.sample(range(10), 4))
-with rc2:
-    if "rand4" in st.session_state:
-        st.success(f"**Random 4:** {' · '.join(map(str, st.session_state['rand4']))}")
+if st.button("🎲 4 Random Numbers", use_container_width=True, type="primary"):
+    st.session_state["rand4"] = sorted(random.sample(range(10), 4))
+if "rand4" in st.session_state:
+    st.success(f"**Random 4:** {' · '.join(map(str, st.session_state['rand4']))}")
 
 st.markdown("---")
 
@@ -146,15 +229,21 @@ with tab1:
     if pred:
         st.caption(f"Based on {pred.get('last_date')}: Open {pred.get('last_open')} "
                    f"({pred.get('last_open_panna')})")
-        cc1, cc2 = st.columns(2)
-        with cc1:
+        if is_mobile():
             st.markdown("**CLOSE (5)**")
-            for x in pred["close_prediction"][:5]:
-                st.write(f"{x['number']} — {x['confidence']}%")
-        with cc2:
+            st.write(" · ".join(f"{x['number']}({x['confidence']}%)" for x in pred["close_prediction"][:5]))
             st.markdown("**CLOSE PANNA (20)**")
-            for x in pred["close_panna_prediction"][:20]:
-                st.write(f"{x['panna']} — {x['confidence']}%")
+            st.write(" · ".join(f"{x['panna']}({x['confidence']}%)" for x in pred["close_panna_prediction"][:20]))
+        else:
+            cc1, cc2 = st.columns(2)
+            with cc1:
+                st.markdown("**CLOSE (5)**")
+                for x in pred["close_prediction"][:5]:
+                    st.write(f"{x['number']} — {x['confidence']}%")
+            with cc2:
+                st.markdown("**CLOSE PANNA (20)**")
+                for x in pred["close_panna_prediction"][:20]:
+                    st.write(f"{x['panna']} — {x['confidence']}%")
     else:
         st.info("Is site ka data nahi mila — sidebar se fetch karo.")
 
@@ -260,27 +349,46 @@ with tab3:
                 with st.expander(
                     f"📊 {s} — Next: {p.get('predict_for_date')} "
                     f"(based on {p.get('last_date')})", expanded=True):
-                    c1, c2, c3, c4, c5 = st.columns(5)
-                    with c1:
-                        st.markdown("**OPEN (5)**")
-                        for x in p["open_prediction"][:5]:
-                            st.write(f"{x['number']} — {x['confidence']}%")
-                    with c2:
-                        st.markdown("**CLOSE (5)**")
-                        for x in p["close_prediction"][:5]:
-                            st.write(f"{x['number']} — {x['confidence']}%")
-                    with c3:
+                    _mob = is_mobile()
+                    if _mob:
+                        # Stack: Open+Close row, Jodi row, Panna rows
+                        r1c1, r1c2 = st.columns(2)
+                        with r1c1:
+                            st.markdown("**OPEN (5)**")
+                            for x in p["open_prediction"][:5]:
+                                st.write(f"{x['number']} — {x['confidence']}%")
+                        with r1c2:
+                            st.markdown("**CLOSE (5)**")
+                            for x in p["close_prediction"][:5]:
+                                st.write(f"{x['number']} — {x['confidence']}%")
                         st.markdown("**JODI (10)**")
-                        for x in p["jodi_prediction"][:10]:
-                            st.write(f"{x['jodi']} — {x['confidence']}%")
-                    with c4:
+                        st.write(" · ".join(f"{x['jodi']}({x['confidence']}%)" for x in p["jodi_prediction"][:10]))
                         st.markdown("**OPEN PANNA (20)**")
-                        for x in p["open_panna_prediction"][:20]:
-                            st.write(f"{x['panna']} — {x['confidence']}%")
-                    with c5:
+                        st.write(" · ".join(f"{x['panna']}({x['confidence']}%)" for x in p["open_panna_prediction"][:20]))
                         st.markdown("**CLOSE PANNA (20)**")
-                        for x in p["close_panna_prediction"][:20]:
-                            st.write(f"{x['panna']} — {x['confidence']}%")
+                        st.write(" · ".join(f"{x['panna']}({x['confidence']}%)" for x in p["close_panna_prediction"][:20]))
+                    else:
+                        c1, c2, c3, c4, c5 = st.columns(5)
+                        with c1:
+                            st.markdown("**OPEN (5)**")
+                            for x in p["open_prediction"][:5]:
+                                st.write(f"{x['number']} — {x['confidence']}%")
+                        with c2:
+                            st.markdown("**CLOSE (5)**")
+                            for x in p["close_prediction"][:5]:
+                                st.write(f"{x['number']} — {x['confidence']}%")
+                        with c3:
+                            st.markdown("**JODI (10)**")
+                            for x in p["jodi_prediction"][:10]:
+                                st.write(f"{x['jodi']} — {x['confidence']}%")
+                        with c4:
+                            st.markdown("**OPEN PANNA (20)**")
+                            for x in p["open_panna_prediction"][:20]:
+                                st.write(f"{x['panna']} — {x['confidence']}%")
+                        with c5:
+                            st.markdown("**CLOSE PANNA (20)**")
+                            for x in p["close_panna_prediction"][:20]:
+                                st.write(f"{x['panna']} — {x['confidence']}%")
     else:
         st.info("👆 Upar site ka naam likho — poora panel dikhega.")
 
