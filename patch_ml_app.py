@@ -1,4 +1,12 @@
-# app.py — v4 with ML tab + manual results
+# patch_ml_app.py
+import shutil, os, py_compile
+
+# Backup current v3
+if not os.path.exists("app_v3_backup.py"):
+    shutil.copy("app.py", "app_v3_backup.py")
+    print("✅ Backup: app_v3_backup.py")
+
+NEW_APP = '''# app.py — v4 with ML tab + manual results
 import streamlit as st
 import pandas as pd
 import random
@@ -346,3 +354,15 @@ with tab4:
                 except Exception:
                     pass
                 st.rerun()
+'''
+
+with open("app.py", "w") as f:
+    f.write(NEW_APP)
+
+py_compile.compile("app.py", doraise=True)
+print("✅ app.py v4 ready (ML tab wapas)")
+print("✅ Syntax OK")
+print()
+print("Ab chalao:")
+print("  Ctrl+C")
+print("  streamlit run app.py")
