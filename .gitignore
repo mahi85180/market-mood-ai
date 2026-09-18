@@ -6,9 +6,9 @@ __pycache__/
 models/*.pkl
 models/*.keras
 models/*.h5
-daily_predictions/snapshots/*.json
 predictions/
 scripts/archive/
 *.bak
 app_v2_backup.py
 app_old.py
+app_v3_backup.py
