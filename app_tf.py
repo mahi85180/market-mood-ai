@@ -175,7 +175,10 @@ if st.sidebar.button("🌐 Fetch All Sites"):
         st.sidebar.success("Done!")
         st.rerun()
 
-st.sidebar.info("🌲 RF-only version (cloud-compatible)")
+if TF_AVAILABLE:
+    st.sidebar.success("✅ TensorFlow ready")
+else:
+    st.sidebar.warning("⚠️ TF missing — sirf RF chalega")
 
 st.sidebar.caption("Statistical tool. Prediction guarantee nahi.")
 
@@ -279,27 +282,44 @@ with tab2:
         seq_len = c2.number_input("Seq Length", 5, 30, 10, key="seq_l")
         epochs = c3.number_input("Epochs", 10, 100, 30, key="ep")
 
-        st.info("💡 Ye RF-only version hai (cloud ke liye). Full TF version ke liye `app_tf.py` chalao.")
-
-        if st.button("🚀 Train RF Model", type="primary"):
+        if st.button("🚀 Train All Models", type="primary"):
             predictor = MLPredictor(df)
-            with st.spinner("🌲 Random Forest training..."):
+            with st.spinner("Random Forest training..."):
                 _, msg = predictor.train_rf(window)
                 st.success(msg)
+
+            if TF_AVAILABLE:
+                with st.spinner("LSTM training (30-60s)..."):
+                    _, msg = predictor.train_lstm(seq_len, epochs)
+                    st.info(msg)
+                with st.spinner("GRU training..."):
+                    _, msg = predictor.train_gru(seq_len, epochs)
+                    st.info(msg)
+                with st.spinner("Transformer training..."):
+                    _, msg = predictor.train_transformer(seq_len, epochs)
+                    st.info(msg)
+            else:
+                st.warning("TensorFlow nahi hai — sirf RF chalega.")
 
             st.session_state.predictor = predictor
             st.session_state.ml_trained = True
             st.session_state.ml_site = sel_site
-            st.success("✅ RF trained!")
 
         if st.session_state.get("ml_trained") and st.session_state.get("ml_site") == sel_site:
             predictor = st.session_state.predictor
-            st.markdown("#### 📊 RF Accuracy")
+            st.markdown("#### 📊 Model Accuracy")
             summary = predictor.model_summary()
             sdf = pd.DataFrame([{"Model": k, "Accuracy %": v}
                                  for k, v in summary.items() if v is not None])
             if not sdf.empty:
                 st.dataframe(sdf, use_container_width=True, hide_index=True)
+
+                import plotly.express as px
+                st.plotly_chart(px.bar(sdf, x="Model", y="Accuracy %",
+                                       color="Accuracy %",
+                                       color_continuous_scale="Viridis",
+                                       text="Accuracy %"),
+                                use_container_width=True)
 
             st.markdown("#### 🔮 Combined Prediction (Top 5)")
             combined = predictor.combined_prediction(window, seq_len)
