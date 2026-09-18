@@ -375,6 +375,13 @@ with tab3:
 
 # ==================== TAB 4: HISTORY ====================
 with tab4:
+    _r1, _r2 = st.columns([1, 4])
+    with _r1:
+        if st.button("🔄 Refresh", key="refresh_rf", type="primary"):
+            st.cache_data.clear()
+            st.rerun()
+    with _r2:
+        st.caption("💡 Doosri app me result save kiya? Ye button dabao.")
     st.markdown("### 📊 Comparison — Actual vs Prediction")
 
     cmp1, cmp2 = st.columns(2)
@@ -421,7 +428,10 @@ with tab4:
                 st.write(f"**Jodi** diya: {', '.join(str(p['jodi']) for p in pj)}")
 
     st.markdown("---")
-    with st.expander("📋 Manual Results History"):
+    with st.expander("📋 Manual Results History", expanded=False):
+        if st.button("🔄 Refresh History", key="refresh_hist_{key_suffix}"):
+            st.cache_data.clear()
+            st.rerun()
         hist = load_manual_results()
         if hist.empty:
             st.info("Abhi koi result nahi daala.")
